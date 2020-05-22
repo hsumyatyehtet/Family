@@ -2,7 +2,7 @@
 
 ## Family Contact project
 
-### Contact project use Room database and MVP design pattern.Only can read data from Room database and view in Home page recyclerview page. Phone call will work in Detail Screen.
+### Contact project use Room database and MVP design pattern.Only can read data from Room database and view in Home page recyclerview. Phone call will work in Detail Screen.
 
 * RecyclerView
 * MVP Design pattern
