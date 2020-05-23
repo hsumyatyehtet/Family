@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:background="@color/white_full">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivCover"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/family_cover" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="24dp"
+            android:id="@+id/ivBackArrow"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginLeft="@dimen/dimen_12"
+            android:layout_marginTop="20dp"/>
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/dimen_120"
+            android:layout_height="@dimen/dimen_120"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ivCover"
+            android:layout_marginTop="-60dp"
+            android:scaleType="centerCrop"
+            tool:src="@drawable/hmyh_pp" />
+
+
+        <org.mmtextview.components.MMTextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivProfile"
+            android:layout_marginLeft="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginRight="@dimen/dimen_16"
+            tool:text="Hsu Myat Ye Htet"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_18"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDetailName"
+            android:id="@+id/rlPhoneNumber"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_12">
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvDetailPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_16"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dimen_16"
+                tool:text="09254726191"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_18" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/ivPhone"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/dimen_4"
+                android:src="@drawable/ic_phone"
+                android:background="@drawable/phone_bg"/>
+
+
+        </RelativeLayout>
+
+        <org.mmtextview.components.MMTextView
+            android:id="@+id/tvDetailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlPhoneNumber"
+            android:layout_marginLeft="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginRight="@dimen/dimen_16"
+            tool:text="Yangon"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_18" />
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>
