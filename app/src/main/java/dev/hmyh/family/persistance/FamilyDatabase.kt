@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import dev.hmyh.family.data.vos.ContactVO
 import dev.hmyh.family.persistance.daos.ContactDao
 import dev.hmyh.family.utils.FAMILY_DB
+import dev.hmyh.family.utils.FAMILY_DB_FROM_ASSETS
 
 @Database(entities = [ContactVO::class], version = 2, exportSchema = false)
 abstract class FamilyDatabase : RoomDatabase() {
@@ -18,13 +19,19 @@ abstract class FamilyDatabase : RoomDatabase() {
 
         fun getInstance(context: Context): FamilyDatabase =
             instance ?: synchronized(this) {
-                instance ?: buildDatabase(context).also { instance = it }
+                instance ?: buildDatabaseFromAssets(context).also { instance = it }
             }
 
-
+        //old method,unused
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(context.applicationContext, FamilyDatabase::class.java, FAMILY_DB)
                 .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build()
+
+        private fun buildDatabaseFromAssets(context : Context) =
+            Room.databaseBuilder(context.applicationContext,FamilyDatabase::class.java, FAMILY_DB)
+                .createFromAsset(FAMILY_DB_FROM_ASSETS)
                 .fallbackToDestructiveMigration()
                 .build()
 

@@ -10,8 +10,8 @@ class FamilyApp: Application() {
     override fun onCreate() {
         super.onCreate()
         ContactModelImpl.init(applicationContext)
-        deleteAllContacts()
-        prePopulateContacts()
+        //deleteAllContacts()
+        //prePopulateContacts()
     }
 
     private fun deleteAllContacts() {
